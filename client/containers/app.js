@@ -5,9 +5,10 @@ import {
   Button
 } from "reactstrap";
 import "../styles/styles.css"
-
+//Se recomienda documentar el componente principal, para saber que se espera que sea renderizado.
 export default class App extends React.Component {
   render() {
+	  //Me gusta que utilicen el localstorage de react para almacenar los tokens.
 	if(!localStorage.getItem("token")) {
 		    return (
       <div>
