@@ -3,7 +3,7 @@ var User = require("../models/User");
 var mongoose = require("mongoose");
 var jwt = require("jsonwebtoken");
 var config = require("../../config/database.js");
-
+//Se recomienda documentar la ruta de mejor forma, para conocer que parámetros se esperan y los posibles resultados.
 // Authentication
 router.post("/signUp", function(req, res) {
   var newUser = new User({
@@ -33,7 +33,7 @@ router.post("/signUp", function(req, res) {
     });
   });
 });
-
+//Se recomienda documentar la ruta de mejor forma, para conocer que parámetros se esperan y los posibles resultados.
 router.post("/signIn", function(req, res) {
   User.findOne({
     email: req.body.email
