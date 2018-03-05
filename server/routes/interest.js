@@ -3,7 +3,11 @@ var config = require("../../config/database.js");
 var Interest = require("../models/Interest");
 var User = require("../models/User");
 var jwt = require("jsonwebtoken");
-
+/*
+  Se recomienda documentar la ruta para conocer las funcionalidades esperadas.<br>
+  Adicionalmente, el middleware de express permite asegurar un grupo de subrutas que comparten una ruta base. <br>
+  Considero que esa hubiera sido una mejor aproximación.
+*/
 router.post("/", function(req, res) {
   var token = req.body.token || req.query.token || req.headers["x-access-token"];
   if (token) {
@@ -38,6 +42,9 @@ router.post("/", function(req, res) {
   }
 });
 
+/*
+  Se recomienda documentar la ruta para conocer las funcionalidades esperadas.
+*/
 router.get("/user/:userId", function(req, res) {
   var token = req.body.token || req.query.token || req.headers["x-access-token"];
   if (token) {
@@ -61,6 +68,10 @@ router.get("/user/:userId", function(req, res) {
 });
 
 
+/*
+  Se recomienda documentar la ruta para conocer las funcionalidades esperadas.
+  Adicionalmente, se podría añadir documentación de como hacer una petición.
+*/
 router.get("/venue/:venueId", function(req, res) {
   var token = req.body.token || req.query.token || req.headers["x-access-token"];
   if (token) {
